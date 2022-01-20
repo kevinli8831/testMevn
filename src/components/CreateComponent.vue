@@ -1,6 +1,7 @@
 <template>
   <div class="row justify-content-center">
     <div class="col-md-6">
+      create
       <!-- Content goes here -->
     </div>
   </div>
@@ -14,4 +15,3 @@ export default {
   }
 }
 </script>
-</div>
