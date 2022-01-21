@@ -19,7 +19,7 @@
         </div>
 
         <div class="form-group">
-          <button class="btn btn-danger btn-block">Create</button>
+          <button class="btn btn-danger btn-block" type="submit">Create</button>
         </div>
       </form>
     </div>
@@ -42,7 +42,6 @@ export default {
   methods: {
     handleSubmitForm() {
       let apiURL = 'http://localhost:4000/api/create-student';
-
       axios.post(apiURL, this.student).then(() => {
         this.$router.push('/view')
         this.student = {

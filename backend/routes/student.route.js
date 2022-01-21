@@ -1,10 +1,33 @@
 const express = require('express');
 const studentRoute = express.Router();
 
+// Useful method(CRUD) for  server side -> DataBase
+/*Query
+
+Model.find(conditions, [fields], [options], [callback])
+Model.findById(id, [fields], [options], [callback])
+Model.findOne(conditions, [fields], [options], [callback])
+
+Create
+
+Model.create(conditions,[callback])
+
+Update
+
+Model.update(conditions, update, [options], [callback])
+Model.findByIdAndUpdate(id, [update], [options], [callback])
+Model.findOneAndUpdate([conditions], [update], [options], [callback])
+
+Remove
+
+Model.remove(conditions, [callback])
+Model.findByIdAndRemove(id, [options], [callback])
+Model.findOneAndRemove(conditions, [options], [callback])*/
+
 // Student model
 let StudentModel = require('../models/Student');
 
-studentRoute.route('/').get((req, res) => {
+studentRoute.route('/').get((req, res,next) => {
     StudentModel.find((error, data) => {
         if (error) {
             return next(error)
@@ -24,7 +47,7 @@ studentRoute.route('/create-student').post((req, res, next) => {
     })
 });
 
-studentRoute.route('/edit-student/:id').get((req, res) => {
+studentRoute.route('/edit-student/:id').get((req, res,next) => {
     StudentModel.findById(req.params.id, (error, data) => {
         if (error) {
             return next(error)

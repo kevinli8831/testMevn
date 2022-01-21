@@ -8,6 +8,9 @@
           <li class="nav-item mx-3">
             <router-link class="nav-link pr-3" to="/">Create Student</router-link>
           </li>
+          <li class="nav-item mx-3">
+            <router-link class="nav-link pr-3" to="/Teacher">Create Teacher</router-link>
+          </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/view">View Students</router-link>
           </li>

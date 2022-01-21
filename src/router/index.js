@@ -10,6 +10,11 @@ const routes = [
         component: () => import('../components/CreateComponent')
     },
     {
+        path: '/Teacher',
+        name: 'home',
+        component: () => import('../components/CreateTeacherComponent')
+    },
+    {
         path: '/view',
         name: 'view',
         component: () => import('../components/ListComponent')

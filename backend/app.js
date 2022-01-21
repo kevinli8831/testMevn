@@ -16,7 +16,6 @@ mongoose.connect(database.db, {
         console.log("Database could't be connected to: " + error)
     }
 )
-
 const studentAPI = require('../backend/routes/student.route')
 const app = express();
 app.use(bodyParser.json());

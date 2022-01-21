@@ -28,25 +28,28 @@
 
 <script>
 import axios from "axios";
-
 export default {
   data() {
     return {
       student: { }
     }
   },
-  created() {
+  mounted() {
     let apiURL = `http://localhost:4000/api/edit-student/${this.$route.params.id}`;
-
     axios.get(apiURL).then((res) => {
+      console.log(res.data,'res.data');
+      console.log(res.status,'res.status');
+      console.log(res.statusText,'res.statusText');
+      console.log(res.headers,'res.headers');
+      console.log(res.config,'res.config');
+      console.log(res.data,'data')
       this.student = res.data;
     })
   },
   methods: {
     handleUpdateForm() {
       let apiURL = `http://localhost:4000/api/update-student/${this.$route.params.id}`;
-
-      axios.post(apiURL, this.student).then((res) => {
+      this.axios.post(apiURL, this.student).then((res) => {
         console.log(res)
         this.$router.push('/view')
       }).catch(error => {

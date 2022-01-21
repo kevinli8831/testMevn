@@ -48,7 +48,6 @@ export default {
     deleteStudent(id){
       let apiURL = `http://localhost:4000/api/delete-student/${id}`;
       let indexOfArrayItem = this.Students.findIndex(i => i._id === id);
-
       if (window.confirm("Do you really want to delete?")) {
         axios.delete(apiURL).then(() => {
           this.Students.splice(indexOfArrayItem, 1);
