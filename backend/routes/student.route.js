@@ -27,7 +27,7 @@ Model.findOneAndRemove(conditions, [options], [callback])*/
 // Student model
 let StudentModel = require('../models/Student');
 
-studentRoute.route('/').get((req, res,next) => {
+studentRoute.route('/listStudents').get((req, res,next) => {
     StudentModel.find((error, data) => {
         if (error) {
             return next(error)

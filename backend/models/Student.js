@@ -12,7 +12,8 @@ let studentSchema = new Schema({
         type: Number
     },
 }, {
-    collection: 'students'
+    collection: 'students',
+    timestamps: {createdAt: 'created_at', updatedAt: 'updated_at'},
 })
 
 

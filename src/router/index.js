@@ -10,14 +10,24 @@ const routes = [
         component: () => import('../components/CreateComponent')
     },
     {
+        path: '/test',
+        name: 'test',
+        component: () => import('../components/test')
+    },
+    {
         path: '/Teacher',
-        name: 'home',
+        name: 'Teacher',
         component: () => import('../components/CreateTeacherComponent')
     },
     {
-        path: '/view',
-        name: 'view',
+        path: '/viewStudents',
+        name: 'viewStudents',
         component: () => import('../components/ListComponent')
+    },
+    {
+        path: '/viewTeachers',
+        name: 'viewTeachers',
+        component: () => import('../components/TeacherListComponent')
     },
     {
         path: '/edit/:id',

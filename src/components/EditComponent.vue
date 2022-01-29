@@ -31,7 +31,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      student: { }
+      student: {}
     }
   },
   mounted() {
@@ -51,7 +51,7 @@ export default {
       let apiURL = `http://localhost:4000/api/update-student/${this.$route.params.id}`;
       this.axios.post(apiURL, this.student).then((res) => {
         console.log(res)
-        this.$router.push('/view')
+        this.$router.push('/viewStudents')
       }).catch(error => {
         console.log(error)
       });

@@ -3,22 +3,19 @@
     <div class="col-md-6">
       <h3 class="text-center">Create Student</h3>
       <form @submit.prevent="handleSubmitForm">
-        <div class="form-group">
+        <div >
           <label>Name</label>
           <input type="text" class="form-control" v-model="student.name" required>
         </div>
-
-        <div class="form-group">
+        <div >
           <label>Email</label>
           <input type="email" class="form-control" v-model="student.email" required>
         </div>
-
-        <div class="form-group">
+        <div >
           <label>Phone</label>
           <input type="text" class="form-control" v-model="student.phone" required>
         </div>
-
-        <div class="form-group">
+        <div class="mt-3">
           <button class="btn btn-danger btn-block" type="submit">Create</button>
         </div>
       </form>
@@ -43,7 +40,7 @@ export default {
     handleSubmitForm() {
       let apiURL = 'http://localhost:4000/api/create-student';
       axios.post(apiURL, this.student).then(() => {
-        this.$router.push('/view')
+        this.$router.push('/viewStudents')
         this.student = {
           name: '',
           email: '',
